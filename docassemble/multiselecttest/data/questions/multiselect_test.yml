@@ -1,0 +1,28 @@
+---
+mandatory: True
+question: |
+  Test
+fields:
+  - My multiselect: mselect
+    default: |
+      test1, test2, test3
+    # datatype: multiselect
+    #choices:
+    #  - test1
+    #  - test2
+    #  - test3
+script: |
+  <script src="https://unpkg.com/@yaireo/tagify"></script>
+  <script src="https://unpkg.com/@yaireo/tagify/dist/tagify.polyfills.min.js"></script>
+  <link href="https://unpkg.com/@yaireo/tagify/dist/tagify.css" rel="stylesheet" type="text/css" />
+  <script>
+    // The DOM element you wish to replace with Tagify
+    var input = document.querySelector('input[name=bXNlbGVjdA]');
+
+    // initialize Tagify on the above input node reference
+    new Tagify(input)
+  </script>
+---
+mandatory: True
+question: |
+  ${ mselect }

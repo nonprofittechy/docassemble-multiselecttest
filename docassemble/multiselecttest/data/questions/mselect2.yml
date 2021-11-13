@@ -1,0 +1,25 @@
+---
+features:
+  css: filter_multi_select.css
+  javascript: filter-multi-select-bundle.min.js
+---
+mandatory: True
+question: |
+  Test m
+fields:
+  - mselect: mselect
+    datatype: multiselect
+    choices:
+      - North America
+      - South America
+      - Africa
+      - Europe
+      - Asia
+      - Australia
+      - Antarctica
+script: |
+  <script>
+    $(function () {
+      $('#bXNlbGVjdA').filterMultiSelect();
+    });
+  </script>
