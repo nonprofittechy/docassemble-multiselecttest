@@ -19,11 +19,11 @@
  */
 :root {
     --fms-badge-text-color: white;
-    --fms-badge-color: var(--primary)
+    --fms-badge-color: var(--bs-primary)
 }
 
-.filter-multi-select.dropup, .filter-multi-select.dropdown {
-    position: relative;
+.placeholder {
+  background-color: inherit;
 }
 
 .filter-multi-select .dropdown-toggle::after {
