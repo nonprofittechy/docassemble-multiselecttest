@@ -1,7 +1,8 @@
 ---
 features:
-  css: filter_multi_select.css
-  javascript: filter-multi-select-bundle.min.js
+  css: bootstrap-multiselect.min.css
+  javascript: bootstrap-multiselect.min.js
+  # https://davidstutz.github.io/bootstrap-multiselect/#getting-started
 ---
 mandatory: True
 question: |
@@ -9,7 +10,6 @@ question: |
 fields:
   - Industry: mselect
     datatype: multiselect
-    #css class: "filter-multi-select"
     choices:
       - Beverages & Tobacco
       - Biotechnology & Life Sciences
@@ -37,18 +37,13 @@ fields:
       - Transportation 
       - Universal
       - Utilities
-  # Mselect 2: mselect2
-  # datatype: multiselect
-  # choices:
-  #   - Option1
-  #   - Option2
 script: |
-  <script>
-    $(function () {
-      $('#bXNlbGVjdA').filterMultiSelect();
-    });
+  <script type="text/javascript">
+      $(document).ready(function() {
+          $('#bXNlbGVjdA').multiselect({enableCaseInsensitiveFiltering: true, inheritClass: true});
+      });
   </script>
 ---
 mandatory: True
 question: |
-  Your selected inputs are: ${ mselect }
+  Your selected inputs are: ${ mselect.true_values() }
